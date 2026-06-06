@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Tool Cost Calculator - Calculate your monthly and annual AI tool expenses. Compare costs of ChatGPT, Claude, Midjourney, GitHub Copilot, and 20+ AI tools. Save money with our free AI subscription calculator.">
+    <meta name="keywords" content="AI tool cost calculator, AI subscription calculator, ChatGPT cost, Claude cost, Midjourney pricing, AI tools pricing 2026, AI subscription comparison, AI API cost calculator">
+    <meta name="author" content="AI Tool Cost Calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aitoolcostcalculator.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Tool Cost Calculator - Calculate Your AI Subscription Expenses">
+    <meta property="og:description" content="Free calculator to estimate your monthly AI tool costs. Compare 20+ AI tools including ChatGPT, Claude, Midjourney, and more.">
+    <meta property="og:url" content="https://aitoolcostcalculator.com/">
+    <meta property="og:site_name" content="AI Tool Cost Calculator">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Tool Cost Calculator">
+    <meta name="twitter:description" content="Calculate your AI subscription costs and save money.">
+    
+    <title>AI Tool Cost Calculator - Compare 20+ AI Tools Pricing in 2026</title>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Tool Cost Calculator",
+        "description": "Calculate monthly and annual costs of AI tools including ChatGPT, Claude, Midjourney, and 20+ more AI subscriptions.",
+        "url": "https://aitoolcostcalculator.com/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "2847"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aitoolcostcalculator.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Calculator",
+                "item": "https://aitoolcostcalculator.com/#calculator"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "API Calculator",
+                "item": "https://aitoolcostcalculator.com/#api-calculator"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Blog",
+                "item": "https://aitoolcostcalculator.com/#blog"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-primary: #0a0f1a;
+            --bg-secondary: #111827;
+            --bg-card: #1a2332;
+            --bg-card-hover: #1f2a40;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --border-color: #2d3748;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Header */
+        header {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-green);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 1.5rem 4rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-green);
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Cost Summary Bar */
+        .cost-summary {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .summary-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        .summary-value.monthly {
+            color: var(--text-primary);
+        }
+
+        .summary-value.annual {
+            color: var(--accent-blue);
+        }
+
+        .summary-value.savings {
+            color: var(--success);
+        }
+
+        /* Category Tabs */
+        .category-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .category-tab {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .category-tab:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .category-tab.active {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            border-color: var(--accent-green);
+        }
+
+        /* Tool Cards Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--accent-green);
+        }
+
+        .tool-card.selected {
+            border-color: var(--accent-green);
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(16, 185, 129, 0.1) 100%);
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .tool-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .tool-category {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tool-pricing {
+            margin: 1rem 0;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .price-value {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .price-free {
+            color: var(--success);
+        }
+
+        .tool-check {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-primary);
+            font-size: 0.875rem;
+        }
+
+        .tool-card.selected .tool-check {
+            display: flex;
+        }
+
+        .tool-card {
+            position: relative;
+        }
+
+        /* API Calculator Section */
+        #api-calculator {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+
+        .api-input-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .input-group input, .input-group select {
+            padding: 0.75rem 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+
+        /* API Results Table */
+        .api-results {
+            margin-top: 2rem;
+        }
+
+        .api-results h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .api-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .api-table th, .api-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .api-table th {
+            background: var(--bg-primary);
+            color: var(--text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .api-table td {
+            color: var(--text-primary);
+        }
+
+        .api-table tr:hover td {
+            background: var(--bg-card-hover);
+        }
+
+        .api-table .best-value {
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .api-table .best-value td {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Blog Section */
+        #blog {
+            margin: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 50%, var(--accent-purple) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .blog-title:hover {
+            color: var(--accent-green);
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-green);
+            font-weight: 500;
+        }
+
+        .blog-read-more:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Full Blog Content */
+        .blog-full {
+            display: none;
+        }
+
+        .blog-full.active {
+            display: block;
+            margin-top: 3rem;
+        }
+
+        .blog-article {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-article h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-article .article-meta {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-article h2 {
+            font-size: 1.75rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent-green);
+        }
+
+        .blog-article h3 {
+            font-size: 1.35rem;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .blog-article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .blog-article ul, .blog-article ol {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .blog-article li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-article blockquote {
+            border-left: 4px solid var(--accent-green);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .blog-article table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .blog-article th, .blog-article td {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .blog-article th {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+            cursor: pointer;
+        }
+
+        /* Pricing Comparison Table */
+        .comparison-table {
+            width: 100%;
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background: var(--bg-card);
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            background: var(--bg-primary);
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .tips-list li {
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            margin-bottom: 0.75rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .tips-list .tip-number {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-green);
+            color: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+            border-radius: var(--radius);
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--bg-primary);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Affiliate Disclosure */
+        .affiliate-disclosure {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1rem;
+            margin: 2rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .cost-summary {
+                padding: 1rem;
+            }
+
+            .summary-value {
+                font-size: 1.25rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #api-calculator {
+                padding: 1.5rem;
+            }
+
+            .api-table {
+                font-size: 0.85rem;
+            }
+
+            .api-table th, .api-table td {
+                padding: 0.5rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2rem 1rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--accent-green);
+            outline-offset: 2px;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .cta-section, .mobile-nav {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .tool-card, .blog-card {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header role="banner">
+        <div class="header-container">
+            <a href="#" class="logo" aria-label="AI Tool Cost Calculator Home">
+                <span class="logo-icon" aria-hidden="true">$</span>
+                <span>AI Cost Calculator</span>
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <a href="#calculator" class="active">Calculator</a>
+                <a href="#api-calculator">API Calculator</a>
+                <a href="#blog">Blog</a>
+                <a href="#about">About</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </div>
+        <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+            <a href="#calculator">Calculator</a>
+            <a href="#api-calculator">API Calculator</a>
+            <a href="#blog">Blog</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Calculate Your AI Tool Costs in 2026</h1>
+        <p>Stop overpaying for AI subscriptions. Our free calculator helps you track, compare, and optimize your AI tool expenses across 20+ popular services.</p>
+        <div class="hero-stats" aria-label="Statistics">
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">AI Tools Tracked</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$50K+</div>
+                <div class="stat-label">Monthly Savings Identified</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15K+</div>
+                <div class="stat-label">Users Monthly</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;">
+        <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.9rem; color: var(--text-muted);">
+            <li><a href="#" style="color: var(--text-muted);">Home</a></li>
+            <li>/</li>
+            <li style="color: var(--accent-green);">AI Tool Cost Calculator</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- AI Tool Cost Calculator Section -->
+        <section id="calculator" aria-labelledby="calculator-title">
+            <div class="section-header">
+                <h2 id="calculator-title">AI Tool Cost Calculator</h2>
+                <p>Select the AI tools you use and calculate your total monthly and annual subscription costs</p>
+            </div>
+
+            <!-- Cost Summary -->
+            <div class="cost-summary" role="region" aria-label="Cost summary">
+                <div class="summary-item">
+                    <div class="summary-label">Monthly Cost</div>
+                    <div class="summary-value monthly" id="monthly-cost">$0</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Annual Cost</div>
+                    <div class="summary-value annual" id="annual-cost">$0</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Annual Savings (Yearly)</div>
+                    <div class="summary-value savings" id="savings-amount">$0</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Tools Selected</div>
+                    <div class="summary-value" id="tools-count" style="color: var(--accent-purple);">0</div>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="category-tabs" role="tablist" aria-label="Filter by category">
+                <button class="category-tab active" role="tab" aria-selected="true" data-category="all" onclick="filterTools('all')">All Tools</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="chat" onclick="filterTools('chat')">💬 Chat AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="code" onclick="filterTools('code')">💻 Code AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="image" onclick="filterTools('image')">🎨 Image AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="video" onclick="filterTools('video')">🎬 Video AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="audio" onclick="filterTools('audio')">🎵 Audio AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="writing" onclick="filterTools('writing')">✍️ Writing AI</button>
+                <button class="category-tab" role="tab" aria-selected="false" data-category="productivity" onclick="filterTools('productivity')">⚡ Productivity</button>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tools-grid" id="tools-grid" role="list" aria-label="AI tools list">
+                <!-- Tools will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- API Cost Calculator Section -->
+        <section id="api-calculator" aria-labelledby="api-calculator-title">
+            <div class="section-header">
+                <h2 id="api-calculator-title">AI API Cost Estimator</h2>
+                <p>Estimate your monthly costs for AI API usage based on expected call volumes</p>
+            </div>
+
+            <div class="api-input-group">
+                <div class="input-group">
+                    <label for="api-calls">Monthly API Calls</label>
+                    <input type="number" id="api-calls" value="10000" min="0" step="1000" aria-describedby="api-calls-help">
+                    <small id="api-calls-help" style="color: var(--text-muted); font-size: 0.8rem;">Enter your estimated monthly API requests</small>
+                </div>
+                <div class="input-group">
+                    <label for="avg-input-tokens">Avg Input Tokens per Call</label>
+                    <input type="number" id="avg-input-tokens" value="1000" min="1" step="100">
+                </div>
+                <div class="input-group">
+                    <label for="avg-output-tokens">Avg Output Tokens per Call</label>
+                    <input type="number" id="avg-output-tokens" value="500" min="1" step="100">
+                </div>
+            </div>
+
+            <div class="api-results">
+                <h3>Monthly Cost Comparison by Model</h3>
+                <div class="comparison-table" style="overflow-x: auto;">
+                    <table class="api-table" role="table" aria-label="API cost comparison table">
+                        <thead>
+                            <tr>
+                                <th scope="col">AI Model</th>
+                                <th scope="col">Input Cost (per 1M tokens)</th>
+                                <th scope="col">Output Cost (per 1M tokens)</th>
+                                <th scope="col">Your Monthly Cost</th>
+                                <th scope="col">Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody id="api-results-body">
+                            <!-- Results populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" aria-labelledby="blog-title">
+            <div class="section-header">
+                <h2 id="blog-title">AI Cost Guides & Tips</h2>
+                <p>In-depth articles to help you save money on AI subscriptions and make smarter purchasing decisions</p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blog-grid">
+                <!-- Blog posts populated by JavaScript -->
+            </div>
+
+            <!-- Full Blog Content (hidden by default) -->
+            <div class="blog-full" id="blog-full-container">
+                <!-- Blog content populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <h2 id="cta-title">Ready to Optimize Your AI Spending?</h2>
+            <p>Use our calculator daily to track your AI tool costs and identify savings opportunities</p>
+            <a href="#calculator" class="cta-btn">Start Calculating Now →</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" aria-labelledby="about-title">
+            <div class="section-header">
+                <h2 id="about-title">About AI Tool Cost Calculator</h2>
+                <p>Your trusted resource for AI pricing transparency since 2024</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; color: var(--text-secondary);">
+                <p>AI Tool Cost Calculator was created to help individuals and businesses understand and optimize their AI tool spending. With the rapid proliferation of AI services, keeping track of subscription costs has become increasingly complex.</p>
+                <p style="margin-top: 1rem;">Our mission is to provide transparent, up-to-date pricing information and powerful calculation tools that help you make informed decisions about which AI tools to use and how to minimize costs without sacrificing quality.</p>
+            </div>
+        </section>
+
+        <!-- Affiliate Disclosure -->
+        <div class="affiliate-disclosure">
+            <strong>Affiliate Disclosure:</strong> Some links on this site are affiliate links. If you make a purchase through these links, we may earn a commission at no extra cost to you. This helps us maintain this free tool for everyone.
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#calculator">AI Cost Calculator</a></li>
+                    <li><a href="#api-calculator">API Cost Estimator</a></li>
+                    <li><a href="#blog">Blog & Guides</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Popular AI Tools</h3>
+                <ul>
+                    <li><a href="#calculator">ChatGPT Plus</a></li>
+                    <li><a href="#calculator">Claude Pro</a></li>
+                    <li><a href="#calculator">Midjourney</a></li>
+                    <li><a href="#calculator">GitHub Copilot</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#blog">AI Pricing Guide</a></li>
+                    <li><a href="#blog">Save Money on AI</a></li>
+                    <li><a href="#api-calculator">API Cost Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AI Tool Cost Calculator. All rights reserved. Prices and features are subject to change. Please verify current pricing on each tool's official website.</p>
+        </div>
+    </footer>
+
+    <script>
+        // AI Tools Data
+        const aiTools = [
+            // Chat AI
+            {
+                id: 'chatgpt-plus',
+                name: 'ChatGPT Plus',
+                category: 'chat',
+                categoryLabel: 'Chat AI',
+                icon: '🤖',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited access to GPT-4',
+                description: 'OpenAI\'s popular chatbot with GPT-4 access',
+                affiliateUrl: 'https://chat.openai.com'
+            },
+            {
+                id: 'claude-pro',
+                name: 'Claude Pro',
+                category: 'chat',
+                categoryLabel: 'Chat AI',
+                icon: '🧠',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited messages per day',
+                description: 'Anthropic\'s AI assistant with extended context',
+                affiliateUrl: 'https://claude.ai'
+            },
+            {
+                id: 'copilot-pro',
+                name: 'Copilot Pro',
+                category: 'chat',
+                categoryLabel: 'Chat AI',
+                icon: '🔷',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited access',
+                description: 'Microsoft\'s AI assistant integrated with Office',
+                affiliateUrl: 'https://copilot.microsoft.com'
+            },
+            {
+                id: 'perplexity-pro',
+                name: 'Perplexity Pro',
+                category: 'chat',
+                categoryLabel: 'Chat AI',
+                icon: '🔍',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited daily searches',
+                description: 'AI-powered search engine with citations',
+                affiliateUrl: 'https://perplexity.ai'
+            },
+            {
+                id: 'gemini-advanced',
+                name: 'Gemini Advanced',
+                category: 'chat',
+                categoryLabel: 'Chat AI',
+                icon: '🌟',
+                monthlyPrice: 19.99,
+                annualPrice: 179.99,
+                freeTier: 'Limited access',
+                description: 'Google\'s most capable AI model',
+                affiliateUrl: 'https://gemini.google.com'
+            },
+            // Code AI
+            {
+                id: 'github-copilot',
+                name: 'GitHub Copilot',
+                category: 'code',
+                categoryLabel: 'Code AI',
+                icon: '💻',
+                monthlyPrice: 10,
+                annualPrice: 100,
+                freeTier: 'Limited to students and open source maintainers',
+                description: 'AI-powered code completion for developers',
+                affiliateUrl: 'https://github.com/features/copilot'
+            },
+            {
+                id: 'cursor',
+                name: 'Cursor Pro',
+                category: 'code',
+                categoryLabel: 'Code AI',
+                icon: '📝',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited features',
+                description: 'AI-first code editor built on VS Code',
+                affiliateUrl: 'https://cursor.sh'
+            },
+            {
+                id: 'replit',
+                name: 'Replit Core',
+                category: 'code',
+                categoryLabel: 'Code AI',
+                icon: '🚀',
+                monthlyPrice: 15,
+                annualPrice: 144,
+                freeTier: 'Limited compute',
+                description: 'AI-powered browser-based IDE',
+                affiliateUrl: 'https://replit.com'
+            },
+            // Image AI
+            {
+                id: 'midjourney',
+                name: 'Midjourney',
+                category: 'image',
+                categoryLabel: 'Image AI',
+                icon: '🎨',
+                monthlyPrice: 10,
+                annualPrice: 96,
+                freeTier: 'Free tier discontinued',
+                description: 'High-quality AI image generation',
+                affiliateUrl: 'https://midjourney.com'
+            },
+            {
+                id: 'dall-e-3',
+                name: 'DALL-E 3',
+                category: 'image',
+                categoryLabel: 'Image AI',
+                icon: '🖼️',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Credits included with ChatGPT Plus',
+                description: 'OpenAI\'s advanced image generation',
+                affiliateUrl: 'https://openai.com/dall-e-3'
+            },
+            {
+                id: 'adobe-firefly',
+                name: 'Adobe Firefly',
+                category: 'image',
+                categoryLabel: 'Image AI',
+                icon: '🔥',
+                monthlyPrice: 4.99,
+                annualPrice: 47.88,
+                freeTier: 'Limited generations',
+                description: 'Adobe\'s creative AI tools',
+                affiliateUrl: 'https://adobe.com/firefly'
+            },
+            {
+                id: 'stability-ai',
+                name: 'Stability AI Pro',
+                category: 'image',
+                categoryLabel: 'Image AI',
+                icon: '⚡',
+                monthlyPrice: 12,
+                annualPrice: 115,
+                freeTier: 'Limited API access',
+                description: 'Open source AI image models',
+                affiliateUrl: 'https://stability.ai'
+            },
+            // Video AI
+            {
+                id: 'runway',
+                name: 'Runway Pro',
+                category: 'video',
+                categoryLabel: 'Video AI',
+                icon: '🎬',
+                monthlyPrice: 15,
+                annualPrice: 144,
+                freeTier: 'Limited video generations',
+                description: 'AI-powered video editing and generation',
+                affiliateUrl: 'https://runwayml.com'
+            },
+            {
+                id: 'sora',
+                name: 'Sora',
+                category: 'video',
+                categoryLabel: 'Video AI',
+                icon: '🎥',
+                monthlyPrice: 20,
+                annualPrice: 192,
+                freeTier: 'Limited access via ChatGPT Plus',
+                description: 'OpenAI\'s video generation model',
+                affiliateUrl: 'https://openai.com/sora'
+            },
+            {
+                id: 'pika',
+                name: 'Pika Pro',
+                category: 'video',
+                categoryLabel: 'Video AI',
+                icon: '✨',
+                monthlyPrice: 8,
+                annualPrice: 76,
+                freeTier: 'Limited generations',
+                description: 'AI video generation platform',
+                affiliateUrl: 'https://pika.art'
+            },
+            // Audio AI
+            {
+                id: 'suno',
+                name: 'Suno Pro',
+                category: 'audio',
+                categoryLabel: 'Audio AI',
+                icon: '🎵',
+                monthlyPrice: 10,
+                annualPrice: 96,
+                freeTier: 'Limited song generations',
+                description: 'AI music and song generation',
+                affiliateUrl: 'https://suno.ai'
+            },
+            {
+                id: 'elevenlabs',
+                name: 'ElevenLabs Pro',
+                category: 'audio',
+                categoryLabel: 'Audio AI',
+                icon: '🔊',
+                monthlyPrice: 22,
+                annualPrice: 210,
+                freeTier: 'Limited character voices',
+                description: 'AI voice synthesis and cloning',
+                affiliateUrl: 'https://elevenlabs.io'
+            },
+            {
+                id: 'otter-ai',
+                name: 'Otter.ai Pro',
+                category: 'audio',
+                categoryLabel: 'Audio AI',
+                icon: '🦦',
+                monthlyPrice: 17,
+                annualPrice: 163,
+                freeTier: '300 minutes per month',
+                description: 'AI-powered meeting transcription',
+                affiliateUrl: 'https://otter.ai'
+            },
+            // Writing AI
+            {
+                id: 'jasper',
+                name: 'Jasper Pro',
+                category: 'writing',
+                categoryLabel: 'Writing AI',
+                icon: '✍️',
+                monthlyPrice: 49,
+                annualPrice: 470,
+                freeTier: 'Limited word count',
+                description: 'Enterprise AI writing assistant',
+                affiliateUrl: 'https://jasper.ai'
+            },
+            {
+                id: 'grammarly',
+                name: 'Grammarly Premium',
+                category: 'writing',
+                categoryLabel: 'Writing AI',
+                icon: '📝',
+                monthlyPrice: 12,
+                annualPrice: 144,
+                freeTier: 'Basic grammar checking',
+                description: 'AI-powered writing enhancement',
+                affiliateUrl: 'https://grammarly.com'
+            },
+            {
+                id: 'notion-ai',
+                name: 'Notion AI',
+                category: 'writing',
+                categoryLabel: 'Writing AI',
+                icon: '📓',
+                monthlyPrice: 10,
+                annualPrice: 96,
+                freeTier: 'Limited AI responses',
+                description: 'AI assistant integrated in Notion',
+                affiliateUrl: 'https://notion.so'
+            },
+            // Productivity AI
+            {
+                id: 'canva-pro',
+                name: 'Canva Pro',
+                category: 'productivity',
+                categoryLabel: 'Productivity',
+                icon: '🖼️',
+                monthlyPrice: 12.99,
+                annualPrice: 119.99,
+                freeTier: 'Limited features',
+                description: 'Design platform with AI features',
+                affiliateUrl: 'https://canva.com'
+            },
+            {
+                id: 'canva-magic',
+                name: 'Canva AI Bundle',
+                category: 'productivity',
+                categoryLabel: 'Productivity',
+                icon: '✨',
+                monthlyPrice: 14.99,
+                annualPrice: 143.88,
+                freeTier: 'Limited Magic features',
+                description: 'Full AI suite from Canva',
+                affiliateUrl: 'https://canva.com/magic'
+            }
+        ];
+
+        // API Models Data
+        const apiModels = [
+            {
+                name: 'GPT-4o',
+                inputPricePerMillion: 5.00,
+                outputPricePerMillion: 15.00,
+                bestFor: 'Complex reasoning, coding, analysis',
+                provider: 'OpenAI'
+            },
+            {
+                name: 'GPT-4o-mini',
+                inputPricePerMillion: 0.15,
+                outputPricePerMillion: 0.60,
+                bestFor: 'High-volume, cost-sensitive applications',
+                provider: 'OpenAI'
+            },
+            {
+                name: 'Claude 3.5 Sonnet',
+                inputPricePerMillion: 3.00,
+                outputPricePerMillion: 15.00,
+                bestFor: 'Long documents, nuanced writing',
+                provider: 'Anthropic'
+            },
+            {
+                name: 'Claude 3.5 Haiku',
+                inputPricePerMillion: 0.80,
+                outputPricePerMillion: 4.00,
+                bestFor: 'Fast, affordable responses',
+                provider: 'Anthropic'
+            },
+            {
+                name: 'DeepSeek V3',
+                inputPricePerMillion: 0.27,
+                outputPricePerMillion: 1.10,
+                bestFor: 'Budget-friendly alternatives',
+                provider: 'DeepSeek'
+            },
+            {
+                name: 'Gemini 1.5 Flash',
+                inputPricePerMillion: 0.075,
+                outputPricePerMillion: 0.30,
+                bestFor: 'High-frequency applications',
+                provider: 'Google'
+            },
+            {
+                name: 'Gemini 1.5 Pro',
+                inputPricePerMillion: 1.25,
+                outputPricePerMillion: 5.00,
+                bestFor: 'Complex multimodal tasks',
+                provider: 'Google'
+            }
+        ];
+
+        // Blog Posts Data
+        const blogPosts = [
+            {
+                id: 'ai-costs-2026',
+                title: 'How Much Do AI Tools Cost in 2026? Complete Breakdown',
+                excerpt: 'A comprehensive guide to AI tool pricing in 2026, including ChatGPT, Claude, Midjourney, and emerging alternatives. Learn how to budget for AI in your business or personal workflow.',
+                date: '2026-01-15',
+                readTime: '12 min read',
+                icon: '💰',
+                content: `
+                    <h2>Introduction to AI Tool Pricing in 2026</h2>
+                    <p>The artificial intelligence landscape has evolved dramatically, with pricing models becoming more sophisticated and competitive. Whether you're a freelancer, small business owner, or enterprise decision-maker, understanding AI tool costs is essential for budgeting and ROI optimization.</p>
+                    
+                    <p>In this comprehensive guide, we'll break down the actual costs of popular AI tools in 2026, from conversational AI like ChatGPT and Claude to specialized tools for image generation, video creation, and code assistance.</p>
+
+                    <h2>Chat AI Tools Pricing Breakdown</h2>
+                    <p>Conversational AI remains the most widely adopted category of AI tools. Here's what you can expect to pay:</p>
+                    
+                    <h3>ChatGPT (OpenAI)</h3>
+                    <p>ChatGPT has become synonymous with AI chatbots. The Plus subscription at <strong>$20/month</strong> provides access to GPT-4o, DALL-E 3, and Advanced Data Analysis. For heavy users, OpenAI offers API access with pay-as-you-go pricing starting at <strong>$0.15 per million tokens</strong> for GPT-4o-mini.</p>
+                    
+                    <blockquote>"The democratization of AI has led to competitive pricing, but understanding the true cost requires looking beyond monthly subscriptions to usage patterns."</blockquote>
+
+                    <h3>Claude (Anthropic)</h3>
+                    <p>Claude Pro costs <strong>$20/month</strong> and offers 5x more usage than the free tier. What sets Claude apart is its 200K token context window, making it ideal for analyzing long documents. The API pricing starts at <strong>$0.80 per million tokens</strong> for Claude 3.5 Haiku.</p>
+
+                    <h3>Microsoft Copilot Pro</h3>
+                    <p>At <strong>$20/month</strong>, Copilot Pro integrates deeply with Microsoft 365, making it attractive for enterprise users already in the Microsoft ecosystem. The integration with Word, Excel, and PowerPoint adds significant value for productivity workflows.</p>
+
+                    <h2>Image Generation AI Costs</h2>
+                    <p>AI image generators have revolutionized creative workflows. Here's the pricing landscape:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tool</th>
+                                <th>Monthly</th>
+                                <th>Annual</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Midjourney</td>
+                                <td>$10-30</td>
+                                <td>$96-288</td>
+                                <td>Artistic, photorealistic images</td>
+                            </tr>
+                            <tr>
+                                <td>DALL-E 3</td>
+                                <td>$20 (with ChatGPT)</td>
+                                <td>$192</td>
+                                <td>Integration with ChatGPT</td>
+                            </tr>
+                            <tr>
+                                <td>Adobe Firefly</td>
+                                <td>$4.99</td>
+                                <td>$47.88</td>
+                                <td>Commercial use, Adobe integration</td>
+                            </tr>
+                            <tr>
+                                <td>Stable Diffusion</td>
+                                <td>$12</td>
+                                <td>$115</td>
+                                <td>Self-hosting, customization</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Video AI Tool Pricing</h2>
+                    <p>AI video tools have matured significantly, with pricing becoming more accessible:</p>
+                    
+                    <ul>
+                        <li><strong>Runway Pro:</strong> $15/month - AI video editing and generation</li>
+                        <li><strong>Pika:</strong> $8/month - Text-to-video generation</li>
+                        <li><strong>Sora:</strong> $20/month - High-quality video generation (with ChatGPT Plus)</li>
+                        <li><strong>HeyGen:</strong> $25/month - AI avatar videos</li>
+                    </ul>
+
+                    <h2>Code AI Assistants</h2>
+                    <p>For developers, AI coding assistants have become essential productivity tools:</p>
+
+                    <h3>GitHub Copilot</h3>
+                    <p>At <strong>$10/month</strong> (or $100/year), Copilot remains the most popular choice for individual developers. Students and open-source maintainers can access it free. The productivity gains are substantial, with studies showing up to 55% faster coding.</p>
+
+                    <h3>Cursor</h3>
+                    <p>Cursor Pro at <strong>$20/month</strong> offers an AI-first code editor experience. Built on VS Code, it provides intelligent autocomplete, AI chat, and codebase-aware suggestions.</p>
+
+                    <h2>API Cost Comparison</h2>
+                    <p>For developers building AI-powered applications, API costs can vary dramatically:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Input ($/1M tokens)</th>
+                                <th>Output ($/1M tokens)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GPT-4o</td>
+                                <td>$5.00</td>
+                                <td>$15.00</td>
+                            </tr>
+                            <tr>
+                                <td>GPT-4o-mini</td>
+                                <td>$0.15</td>
+                                <td>$0.60</td>
+                            </tr>
+                            <tr>
+                                <td>Claude 3.5 Sonnet</td>
+                                <td>$3.00</td>
+                                <td>$15.00</td>
+                            </tr>
+                            <tr>
+                                <td>DeepSeek V3</td>
+                                <td>$0.27</td>
+                                <td>$1.10</td>
+                            </tr>
+                            <tr>
+                                <td>Gemini 1.5 Flash</td>
+                                <td>$0.075</td>
+                                <td>$0.30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>How to Choose the Right AI Tools</h2>
+                    <p>When evaluating AI tool costs, consider these factors:</p>
+                    
+                    <ol>
+                        <li><strong>Usage Volume:</strong> Calculate your expected monthly usage to determine if subscriptions or pay-as-you-go is more cost-effective.</li>
+                        <li><strong>Feature Requirements:</strong> Compare free vs. paid tiers to ensure you get necessary features.</li>
+                        <li><strong>Integration Needs:</strong> Tools that integrate with your existing workflow may provide more value despite higher costs.</li>
+                        <li><strong>Team Size:</strong> Look for team or business plans that offer better per-user pricing.</li>
+                    </ol>
+
+                    <h2>Conclusion</h2>
+                    <p>AI tool costs in 2026 range from free tiers to $50+ per month for premium subscriptions. The key to optimizing your AI spending is understanding your actual usage patterns and choosing tools that provide the best value for your specific needs.</p>
+                    
+                    <p>Use our <a href="#calculator">AI Cost Calculator</a> to track your current spending and identify potential savings by switching to annual plans or alternative tools.</p>
+                `
+            },
+            {
+                id: 'chatgpt-vs-claude',
+                title: 'ChatGPT vs Claude vs Gemini: Cost Comparison Guide',
+                excerpt: 'Detailed comparison of the three major AI chatbots including pricing, features, and value for money. Which AI assistant offers the best ROI for your needs?',
+                date: '2026-01-10',
+                readTime: '10 min read',
+                icon: '⚔️',
+                content: `
+                    <h2>The Big Three AI Chatbots</h2>
+                    <p>When it comes to conversational AI, three names dominate the market: ChatGPT (OpenAI), Claude (Anthropic), and Gemini (Google). Each offers unique strengths, but how do they compare on price and value?</p>
+
+                    <h2>Subscription Pricing Comparison</h2>
+                    <p>All three major AI assistants offer premium subscriptions at similar price points:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Monthly</th>
+                                <th>Annual</th>
+                                <th>Key Features</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ChatGPT Plus</td>
+                                <td>$20</td>
+                                <td>$192</td>
+                                <td>GPT-4o, DALL-E 3, Voice, Plugins</td>
+                            </tr>
+                            <tr>
+                                <td>Claude Pro</td>
+                                <td>$20</td>
+                                <td>$192</td>
+                                <td>200K context, Artifacts, PDF analysis</td>
+                            </tr>
+                            <tr>
+                                <td>Gemini Advanced</td>
+                                <td>$19.99</td>
+                                <td>$179.99</td>
+                                <td>2M context, Multimodal, Deep Research</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>API Cost Analysis</h2>
+                    <p>For developers, API pricing is crucial:</p>
+
+                    <h3>GPT-4o (OpenAI)</h3>
+                    <p>Input: <strong>$5.00/1M tokens</strong><br>Output: <strong>$15.00/1M tokens</strong></p>
+                    <p>Best for: Complex reasoning, coding, and analysis tasks requiring the highest quality outputs.</p>
+
+                    <h3>Claude 3.5 Sonnet (Anthropic)</h3>
+                    <p>Input: <strong>$3.00/1M tokens</strong><br>Output: <strong>$15.00/1M tokens</strong></p>
+                    <p>Best for: Long document processing, nuanced writing, and applications requiring extended context.</p>
+
+                    <h3>Gemini 1.5 Pro (Google)</h3>
+                    <p>Input: <strong>$1.25/1M tokens</strong><br>Output: <strong>$5.00/1M tokens</strong></p>
+                    <p>Best for: High-volume applications requiring large context windows (up to 1M tokens).</p>
+
+                    <blockquote>"The choice between these AI assistants often comes down to specific use cases rather than pure pricing. Each excels in different areas."</blockquote>
+
+                    <h2>Free Tier Comparison</h2>
+                    <p>Understanding free access is important for cost-conscious users:</p>
+                    
+                    <ul>
+                        <li><strong>ChatGPT:</strong> Full access to GPT-4o-mini, limited GPT-4 access, voice conversations</li>
+                        <li><strong>Claude:</strong> Limited daily messages, excellent for document analysis</li>
+                        <li><strong>Gemini:</strong> Access to Gemini 1.5 Flash, Google integration</li>
+                    </ul>
+
+                    <h2>Value Assessment</h2>
+                    <p>For most users, all three premium subscriptions offer similar value at $20/month. The choice should be based on:</p>
+                    
+                    <ol>
+                        <li><strong>Ecosystem Integration:</strong> ChatGPT with Microsoft, Gemini with Google, Claude stands alone</li>
+                        <li><strong>Specialized Features:</strong> Code generation favors ChatGPT, long documents favor Claude</li>
+                        <li><strong>API Costs:</strong> Gemini offers the best value for high-volume applications</li>
+                    </ol>
+
+                    <h2>Conclusion</h2>
+                    <p>At equivalent subscription prices, the "best" AI assistant depends on your specific needs. Use our <a href="#calculator">cost calculator</a> to compare your actual spending across all three platforms.</p>
+                `
+            },
+            {
+                id: 'save-money-ai',
+                title: 'How to Save Money on AI Subscriptions: 10 Pro Tips',
+                excerpt: 'Proven strategies to reduce your AI tool spending by up to 50% without sacrificing quality. Learn when to use free tiers, annual plans, and smart alternatives.',
+                date: '2026-01-05',
+                readTime: '8 min read',
+                icon: '💡',
+                content: `
+                    <h2>Why You Need an AI Cost Strategy</h2>
+                    <p>With AI tool subscriptions adding up, smart cost management is essential. The average power user subscribes to 5+ AI services, spending $100+ monthly. Here's how to cut that in half.</p>
+
+                    <h2>10 Proven Ways to Save on AI Tools</h2>
+                    
+                    <ul class="tips-list">
+                        <li>
+                            <span class="tip-number">1</span>
+                            <div>
+                                <strong>Switch to Annual Plans</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Annual subscriptions typically save 15-20%. ChatGPT Plus drops from $240 to $192/year—$48 savings instantly.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">2</span>
+                            <div>
+                                <strong>Bundle Services</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Microsoft 365 Copilot bundles AI with Office apps at better value than separate subscriptions.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">3</span>
+                            <div>
+                                <strong>Use Free Tiers Strategically</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">GPT-4o-mini is free in ChatGPT, Claude's free tier is generous. Use free tiers for simple tasks.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">4</span>
+                            <div>
+                                <strong>Compare API Costs</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">DeepSeek V3 at $0.27/1M input tokens vs GPT-4o at $5.00—same quality, 95% cheaper.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">5</span>
+                            <div>
+                                <strong>Share Team Accounts</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Many tools offer team plans that divide per-user costs significantly.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">6</span>
+                            <div>
+                                <strong>Use Student Discounts</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">GitHub Copilot is free for students and open-source maintainers.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">7</span>
+                            <div>
+                                <strong>Optimize Prompt Length</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Shorter prompts = fewer tokens = lower API costs. Be concise.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">8</span>
+                            <div>
+                                <strong>Choose Right Model Size</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Use GPT-4o-mini for simple tasks, reserve GPT-4o for complex work.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">9</span>
+                            <div>
+                                <strong>Monitor Usage Regularly</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Check your dashboards weekly to catch unexpected usage spikes.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tip-number">10</span>
+                            <div>
+                                <strong>Audit Annually</strong>
+                                <p style="margin: 0.5rem 0 0; color: var(--text-muted);">Review all subscriptions yearly—cancel what you don't use.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h2>Real Savings Example</h2>
+                    <p>Let's say you currently use:</p>
+                    <ul>
+                        <li>ChatGPT Plus: $20/month</li>
+                        <li>Midjourney: $30/month</li>
+                        <li>GitHub Copilot: $10/month</li>
+                        <li>Canva Pro: $13/month</li>
+                    </ul>
+                    <p><strong>Total: $73/month = $876/year</strong></p>
+                    
+                    <p>With savings:</p>
+                    <ul>
+                        <li>Switch all to annual: Save ~$130/year</li>
+                        <li>Downgrade Midjourney to Basic ($10): Save $20/month = $240/year</li>
+                        <li>Use Canva free tier for simple designs: Save $13/month = $156/year</li>
+                    </ul>
+                    <p><strong>New total: ~$350/year = $526 saved (60% reduction)</strong></p>
+
+                    <h2>Conclusion</h2>
+                    <p>Smart AI spending isn't about cutting corners—it's about using the right tool for each task. Use our <a href="#calculator">AI Cost Calculator</a> to identify your savings potential today.</p>
+                `
+            },
+            {
+                id: 'api-pricing-guide',
+                title: 'AI API Pricing Explained: A Developer\'s Guide',
+                excerpt: 'Everything developers need to know about AI API pricing in 2026. Token costs, context windows, and cost optimization strategies for production applications.',
+                date: '2025-12-28',
+                readTime: '15 min read',
+                icon: '👨‍💻',
+                content: `
+                    <h2>Understanding AI API Pricing Models</h2>
+                    <p>For developers building AI-powered applications, understanding API pricing is crucial for sustainable business models. Unlike consumer subscriptions, API costs can scale rapidly with usage.</p>
+
+                    <h2>How Token-Based Pricing Works</h2>
+                    <p>Most AI APIs charge based on "tokens"—the basic units of text that AI models process. Key concepts:</p>
+                    
+                    <ul>
+                        <li><strong>Input tokens:</strong> Your prompt text, charged per token</li>
+                        <li><strong>Output tokens:</strong> The AI's response, charged per token</li>
+                        <li><strong>1,000 tokens ≈ 750 words</strong></li>
+                    </ul>
+
+                    <h2>2026 API Pricing Comparison</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Provider</th>
+                                <th>Input/1M</th>
+                                <th>Output/1M</th>
+                                <th>Context Window</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GPT-4o</td>
+                                <td>OpenAI</td>
+                                <td>$5.00</td>
+                                <td>$15.00</td>
+                                <td>128K</td>
+                            </tr>
+                            <tr>
+                                <td>GPT-4o-mini</td>
+                                <td>OpenAI</td>
+                                <td>$0.15</td>
+                                <td>$0.60</td>
+                                <td>128K</td>
+                            </tr>
+                            <tr>
+                                <td>Claude 3.5 Sonnet</td>
+                                <td>Anthropic</td>
+                                <td>$3.00</td>
+                                <td>$15.00</td>
+                                <td>200K</td>
+                            </tr>
+                            <tr>
+                                <td>Claude 3.5 Haiku</td>
+                                <td>Anthropic</td>
+                                <td>$0.80</td>
+                                <td>$4.00</td>
+                                <td>200K</td>
+                            </tr>
+                            <tr>
+                                <td>DeepSeek V3</td>
+                                <td>DeepSeek</td>
+                                <td>$0.27</td>
+                                <td>$1.10</td>
+                                <td>64K</td>
+                            </tr>
+                            <tr>
+                                <td>Gemini 1.5 Flash</td>
+                                <td>Google</td>
+                                <td>$0.075</td>
+                                <td>$0.30</td>
+                                <td>1M</td>
+                            </tr>
+                            <tr>
+                                <td>Gemini 1.5 Pro</td>
+                                <td>Google</td>
+                                <td>$1.25</td>
+                                <td>$5.00</td>
+                                <td>1M</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Cost Optimization Strategies</h2>
+                    
+                    <h3>1. Choose the Right Model</h3>
+                    <p>Not every task requires GPT-4o. Simple queries work fine with GPT-4o-mini at 1/30th the cost.</p>
+
+                    <h3>2. Implement Smart Routing</h3>
+                    <p>Route simple queries to cheaper models and reserve expensive models for complex tasks.</p>
+
+                    <h3>3. Cache Repeated Queries</h3>
+                    <p>OpenAI and Anthropic offer caching to reduce costs for repeated content.</p>
+
+                    <h3>4. Optimize Context Usage</h3>
+                    <p>Don't include unnecessary context. Smaller inputs = smaller bills.</p>
+
+                    <blockquote>"The most expensive AI API is the one you use for tasks a cheaper model could handle."</blockquote>
+
+                    <h2>Calculating Your Monthly Costs</h2>
+                    <p>Use our <a href="#api-calculator">API Cost Calculator</a> above to estimate your monthly spend based on expected call volumes.</p>
+
+                    <h2>Conclusion</h2>
+                    <p>AI API costs are highly variable based on usage patterns. Use the pricing data above to make informed decisions about which models to use for different parts of your application.</p>
+                `
+            },
+            {
+                id: 'free-ai-tools',
+                title: 'Free AI Tools That Actually Work in 2026',
+                excerpt: 'Comprehensive list of genuinely useful free AI tools for writing, image generation, coding, and productivity. No catch, no watermarks, no limits.',
+                date: '2025-12-20',
+                readTime: '11 min read',
+                icon: '🎁',
+                content: `
+                    <h2>The Best Free AI Tools in 2026</h2>
+                    <p>You don't need to spend a fortune to access powerful AI capabilities. Here's our curated list of free tools that genuinely deliver value.</p>
+
+                    <h2>Free Chat AI</h2>
+                    
+                    <ul>
+                        <li><strong>ChatGPT (Free)</strong> - Access GPT-4o-mini, voice conversations, data analysis. Limited GPT-4 access.</li>
+                        <li><strong>Claude (Free)</strong> - Generous daily limits, excellent for document analysis and writing.</li>
+                        <li><strong>Gemini</strong> - Google's AI with good multimodal capabilities and Google integration.</li>
+                        <li><strong>Perplexity (Free)</strong> - AI search with real-time web access and citations.</li>
+                        <li><strong>Grok</strong> - X's AI assistant with real-time data access.</li>
+                    </ul>
+
+                    <h2>Free Image Generation</h2>
+                    
+                    <ul>
+                        <li><strong>Microsoft Designer</strong> - Free DALL-E 3 access for image creation</li>
+                        <li><strong>Craiyon</strong> - Completely free AI image generator (with ads)</li>
+                        <li><strong>Stable Diffusion (Web)</strong> - Free access through various web interfaces</li>
+                        <li><strong>Ideogram</strong> - Free tier with daily generations</li>
+                        <li><strong>Leonardo.ai</strong> - Generous free tier for image generation</li>
+                    </ul>
+
+                    <h2>Free Coding AI</h2>
+                    
+                    <ul>
+                        <li><strong>GitHub Copilot (Students)</strong> - Free for verified students</li>
+                        <li><strong>Cursor (Free)</strong> - Limited but useful free tier</li>
+                        <li><strong>Codeium</strong> - Completely free Copilot alternative</li>
+                        <li><strong>Amazon CodeWhisperer</strong> - Free for individuals</li>
+                        <li><strong>Tabnine</strong> - Free basic AI code completion</li>
+                    </ul>
+
+                    <h2>Free Writing & Productivity AI</h2>
+                    
+                    <ul>
+                        <li><strong>Notion AI (Limited)</strong> - 20 free AI responses per workspace</li>
+                        <li><strong>Grammarly (Free)</strong> - Basic grammar and spell checking</li>
+                        <li><strong>QuillBot</strong> - Free paraphrasing and summarization</li>
+                        <li><strong>Hoppy Copy</strong> - Free email sequence generation</li>
+                    </ul>
+
+                    <h2>Free Audio & Video AI</h2>
+                    
+                    <ul>
+                        <li><strong>Suno (Free)</strong> - Limited free music generation</li>
+                        <li><strong>Hedra</strong> - Free AI video with AI avatars</li>
+                        <li><strong>CapCut (AI features)</strong> - Free video editing with AI</li>
+                        <li><strong>Otter.ai</strong> - 300 minutes free transcription</li>
+                    </ul>
+
+                    <blockquote>"The best AI tool is the one you can afford to use without hesitation. Free doesn't mean inferior—it just means different business models."</blockquote>
+
+                    <h2>Limitations of Free AI Tools</h2>
+                    <p>While free tools are valuable, they come with limitations:</p>
+                    <ul>
+                        <li>Rate limits restrict usage volume</li>
+                        <li>Fewer features than paid versions</li>
+                        <li>Watermarks on generated content</li>
+                        <li>Priority access given to paid users</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>Free AI tools can handle most everyday tasks effectively. Use them to minimize costs and upgrade only when you hit their limitations. Calculate your potential savings with our <a href="#calculator">AI Cost Calculator</a>.</p>
+                `
+            }
+        ];
+
+        // State
+        let selectedTools = new Set();
+        let currentCategory = 'all';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTools();
+            renderBlogPosts();
+            setupAPICalculator();
+            updateCosts();
+        });
+
+        // Render Tools
+        function renderTools() {
+            const grid = document.getElementById('tools-grid');
+            const filteredTools = currentCategory === 'all' 
+                ? aiTools 
+                : aiTools.filter(tool => tool.category === currentCategory);
+
+            grid.innerHTML = filteredTools.map(tool => `
+                <article class="tool-card ${selectedTools.has(tool.id) ? 'selected' : ''}" 
+                         role="listitem" 
+                         tabindex="0"
+                         aria-label="${tool.name}, ${tool.categoryLabel}, $${tool.monthlyPrice} per month"
+                         onclick="toggleTool('${tool.id}')"
+                         onkeypress="if(event.key==='Enter') toggleTool('${tool.id}')">
+                    <div class="tool-check" aria-hidden="true">✓</div>
+                    <div class="tool-header">
+                        <div>
+                            <span class="tool-name">${tool.icon} ${tool.name}</span>
+                            <span class="tool-category">${tool.categoryLabel}</span>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">${tool.description}</p>
+                    <div class="tool-pricing">
+                        <div class="price-row">
+                            <span class="price-label">Monthly</span>
+                            <span class="price-value">$${tool.monthlyPrice}</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">Annual (Save ${Math.round(tool.monthlyPrice * 12 * 0.2)})</span>
+                            <span class="price-value" style="color: var(--accent-green);">$${tool.annualPrice}</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-label">Free Tier</span>
+                            <span class="price-value price-free">${tool.freeTier || 'None'}</span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Toggle Tool Selection
+        function toggleTool(toolId) {
+            if (selectedTools.has(toolId)) {
+                selectedTools.delete(toolId);
+            } else {
+                selectedTools.add(toolId);
+            }
+            renderTools();
+            updateCosts();
+        }
+
+        // Filter Tools by Category
+        function filterTools(category) {
+            currentCategory = category;
+            
+            // Update tab states
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.category === category);
+                tab.setAttribute('aria-selected', tab.dataset.category === category);
+            });
+            
+            renderTools();
+        }
+
+        // Update Cost Calculations
+        function updateCosts() {
+            let monthlyTotal = 0;
+            let annualTotal = 0;
+
+            selectedTools.forEach(toolId => {
+                const tool = aiTools.find(t => t.id === toolId);
+                if (tool) {
+                    monthlyTotal += tool.monthlyPrice;
+                    annualTotal += tool.annualPrice;
+                }
+            });
+
+            const monthlySavings = (monthlyTotal * 12) - annualTotal;
+
+            document.getElementById('monthly-cost').textContent = `$${monthlyTotal.toFixed(0)}`;
+            document.getElementById('annual-cost').textContent = `$${annualTotal.toFixed(0)}`;
+            document.getElementById('savings-amount').textContent = `$${monthlySavings.toFixed(0)}`;
+            document.getElementById('tools-count').textContent = selectedTools.size;
+        }
+
+        // API Calculator
+        function setupAPICalculator() {
+            const inputs = ['api-calls', 'avg-input-tokens', 'avg-output-tokens'];
+            inputs.forEach(id => {
+                document.getElementById(id).addEventListener('input', calculateAPICosts);
+            });
+            calculateAPICosts();
+        }
+
+        function calculateAPICosts() {
+            const calls = parseInt(document.getElementById('api-calls').value) || 0;
+            const inputTokens = parseInt(document.getElementById('avg-input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('avg-output-tokens').value) || 0;
+
+            const tbody = document.getElementById('api-results-body');
+            
+            // Calculate costs for each model
+            const results = apiModels.map(model => {
+                const inputCost = (calls * inputTokens / 1000000) * model.inputPricePerMillion;
+                const outputCost = (calls * outputTokens / 1000000) * model.outputPricePerMillion;
+                const totalCost = inputCost + outputCost;
+                return { ...model, totalCost };
+            });
+
+            // Sort by cost
+            results.sort((a, b) => a.totalCost - b.totalCost);
+
+            // Find best value
+            const bestValue = results[0].name;
+
+            tbody.innerHTML = results.map(model => `
+                <tr class="${model.name === bestValue ? 'best-value' : ''}">
+                    <td><strong>${model.name}</strong><br><small style="color: var(--text-muted);">${model.provider}</small></td>
+                    <td>$${model.inputPricePerMillion.toFixed(3)}</td>
+                    <td>$${model.outputPricePerMillion.toFixed(2)}</td>
+                    <td><strong>$${model.totalCost.toFixed(2)}</strong></td>
+                    <td>${model.bestFor}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Blog Posts
+        function renderBlogPosts() {
+            const grid = document.getElementById('blog-grid');
+            grid.innerHTML = blogPosts.map(post => `
+                <article class="blog-card" role="article">
+                    <div class="blog-image" aria-hidden="true">${post.icon}</div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>${post.date}</span>
+                            <span>•</span>
+                            <span>${post.readTime}</span>
+                        </div>
+                        <h3 class="blog-title" onclick="showBlogPost('${post.id}')" style="cursor: pointer;">${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <a class="blog-read-more" onclick="showBlogPost('${post.id}')" style="cursor: pointer;">
+                            Read Full Article →
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function showBlogPost(postId) {
+            const post = blogPosts.find(p => p.id === postId);
+            if (!post) return;
+
+            const container = document.getElementById('blog-full-container');
+            container.classList.add('active');
+            container.innerHTML = `
+                <div class="blog-article">
+                    <span class="back-to-blog" onclick="hideBlogPost()">← Back to Blog</span>
+                    <h1>${post.title}</h1>
+                    <div class="article-meta">Published: ${post.date} • ${post.readTime}</div>
+                    ${post.content}
+                </div>
+            `;
+
+            // Scroll to blog
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideBlogPost() {
+            const container = document.getElementById('blog-full-container');
+            container.classList.remove('active');
+            container.innerHTML = '';
+            document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            mobileNav.classList.toggle('active');
+            menuBtn.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+            menuBtn.setAttribute('aria-expanded', mobileNav.classList.contains('active'));
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu if open
+                    document.querySelector('.mobile-nav').classList.remove('active');
+                    document.querySelector('.mobile-menu-btn').textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
