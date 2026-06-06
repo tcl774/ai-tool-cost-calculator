@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tcl774.github.io/ai-tool-cost-calculator/sitemap.xml
